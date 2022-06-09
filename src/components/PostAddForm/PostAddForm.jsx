@@ -1,3 +1,4 @@
+import "./PostAddForm.css";
 const PostAddForm = () => {
   return (
     <form className="bottom-panel d-flex">
