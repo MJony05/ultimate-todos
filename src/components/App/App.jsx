@@ -1,4 +1,6 @@
 import AppHeader from "../AppHeader";
+import PostAddForm from "../PostAddForm/PostAddForm";
+import PostList from "../PostList";
 import PostStatusFilter from "../PostStatusFilter";
 import SearchPanel from "../SearchPanel";
 
@@ -10,6 +12,8 @@ const App = () => {
         <SearchPanel />
         <PostStatusFilter />
       </div>
+      <PostList />
+      <PostAddForm />
     </div>
   );
 };
