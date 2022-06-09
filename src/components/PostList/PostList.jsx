@@ -1,5 +1,5 @@
 import PostListItem from "../PostListItem";
-
+import './PostList.css'
 const PostList = () => {
   return (
     <ul className="app-list list-group">

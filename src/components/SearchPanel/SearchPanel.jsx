@@ -1,3 +1,5 @@
+import './SearchPanel.css'
+
 const SearchPanel = () => {
   return (
     <input
