@@ -1,23 +1,21 @@
 import PostListItem from "../PostListItem";
-import './PostList.css'
-const PostList = ({posts, onDelete}) => {
-  const elements = posts.map((el)=>{
-    const {id,...elProps} = el
+import "./PostList.css";
+const PostList = ({ posts, onDelete, onToggleImportant, onToggleLiked }) => {
+  const elements = posts.map((el) => {
+    const { id, ...elProps } = el;
     return (
-      <li key ={id} className="list-group-item">
+      <li key={id} className="list-group-item">
         <PostListItem
           {...elProps}
-          onDelete = {()=>onDelete(id)}
+          onDelete={() => onDelete(id)}
+          onToggleImportant={() => onToggleImportant(id)}
+          onToggleLiked={() => onToggleLiked(id)}
         />
       </li>
-    )
-  })
+    );
+  });
 
-  return (
-    <ul className="app-list list-group">
-      {elements}
-    </ul>
-  );
+  return <ul className="app-list list-group">{elements}</ul>;
 };
 
 export default PostList;

@@ -4,14 +4,14 @@ export default class PostAddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newPost:""
-    }
+      newPost: "",
+    };
   }
-  getState = (e)=>{
-    let value = e.target.value
-    this.setState({newPost:value})
-  }
-  render(){
+  getState = (e) => {
+    let value = e.target.value;
+    this.setState({ newPost: value });
+  };
+  render() {
     return (
       <form className="bottom-panel d-flex">
         <input
@@ -22,12 +22,21 @@ export default class PostAddForm extends React.Component {
           className="form-control new-post-label"
         />
         <button
-          onClick={this.props.onAdd(this.state.newPost)}
+          onClick={(e) => {
+            e.preventDefault();
+            if (this.state.newPost) {
+              this.props.onAdd(this.state.newPost);
+              this.setState({ newPost: "" });
+            } else {
+              alert("Please write smth");
+            }
+          }}
           type="submit"
-          className="btn btn-outline-secondary">
+          className="btn btn-outline-secondary"
+        >
           Add Post
         </button>
       </form>
-    )
+    );
   }
 }
